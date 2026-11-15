@@ -1,0 +1,22 @@
+/* Animated SVG overlays on cards and documentary scenes */
+.story-art-motion{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;overflow:visible}
+.story-art-motion .motion-stroke{fill:none;stroke:rgba(210,232,255,.42);stroke-width:2}
+.story-art-motion .motion-signal{fill:none;stroke:#d8ff71;stroke-width:4;filter:drop-shadow(0 0 8px #d8ff71);transform-box:fill-box;transform-origin:center;animation:mission-pulse 3.4s ease-out infinite}
+.story-art-motion .motion-signal.delay{animation-delay:1.7s}
+.story-art-motion .motion-sweep{stroke:#d8ff71;stroke-width:2;stroke-dasharray:3 14;animation:mission-scan 8s linear infinite}
+.story-art-motion .motion-glint{fill:#f4fbff;filter:drop-shadow(0 0 9px #8fc7ff);animation:mission-twinkle 2.8s ease-in-out infinite alternate}
+.story-art-motion .motion-glint.g2{animation-delay:.9s}.story-art-motion .motion-glint.g3{animation-delay:1.6s}
+.story-art-motion .motion-track{fill:none;stroke:#ffe0a0;stroke-width:3;stroke-dasharray:5 11;animation:mission-track 9s linear infinite}
+.story-art-motion .motion-orbit{fill:none;stroke:#8fc7ff;stroke-opacity:.55;stroke-width:2;stroke-dasharray:2 8}
+.story-art-motion .motion-orbit-dot{fill:#d8ff71;filter:drop-shadow(0 0 8px #d8ff71)}.story-art-motion .motion-orbit-spin{transform-box:view-box;animation:mission-orbit 18s linear infinite}
+.story-art-motion .motion-craft{animation:mission-drift 5s ease-in-out infinite}
+.story-art-motion .motion-rotor{animation:mission-rotor .18s linear infinite;transform-box:fill-box;transform-origin:center}
+.story-art-motion .motion-dust{fill:#f3d3b0;opacity:.6;animation:mission-dust 5s ease-in-out infinite}
+@keyframes mission-pulse{0%{opacity:.75;transform:scale(.35)}85%,100%{opacity:0;transform:scale(1.6)}}
+@keyframes mission-scan{to{stroke-dashoffset:-136}}
+@keyframes mission-twinkle{from{opacity:.2;transform:scale(.65)}to{opacity:1;transform:scale(1.2)}}
+@keyframes mission-track{to{stroke-dashoffset:-128}}@keyframes mission-orbit{to{transform:rotate(360deg)}}
+@keyframes mission-drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes mission-rotor{to{transform:rotate(360deg)}}
+@keyframes mission-dust{0%,100%{opacity:.15;transform:translateY(6px)}45%{opacity:.8}70%{transform:translateY(-12px)}}
+@media(prefers-reduced-motion:reduce){.story-art-motion *{animation:none!important}}
